@@ -1,0 +1,10 @@
+exportPattern("^[[:alpha:]]+")
+
+export(pam.censor)
+export(pam.coxph)
+export(pam.nlm)
+export(pam.survreg)
+
+importFrom("survival", "survfit")
+importFrom("stats", "lm", "predict")
+

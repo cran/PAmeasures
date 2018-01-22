@@ -1,0 +1,13 @@
+801ba0f1ecd754ad94d654e23eee4f44 *DESCRIPTION
+c9915313a6b3a08e5dbbf45f65d32b4b *NAMESPACE
+affbf19fb9c9ae7bff57ca436d26f651 *R/moore.R
+be39c5936e0860c91b3a40391eb06fd4 *R/pam.censor.R
+a76294965890ee6642249e1c29a095a9 *R/pam.coxph.R
+3559cc01d81c3f98a43ddcab9ae71e4f *R/pam.nlm.R
+e9217c4f892f70cdb03b1820736a0188 *R/pam.survreg.R
+712feff786eafe03e3531a00ee143a45 *data/moore.rda
+d28dec17d43e5dc578598eb924161c97 *man/moore.Rd
+51546ce546f245af74cb1caac9f0fdb4 *man/pam.censor.Rd
+ac5d754851877994aac9f9884cfa30c9 *man/pam.coxph.Rd
+460509cd2a6d2fea0dc08a835043084f *man/pam.nlm.Rd
+a2079cca76ed674fa42ff5e17d3144c2 *man/pam.survreg.Rd
