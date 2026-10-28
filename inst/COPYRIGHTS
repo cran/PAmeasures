@@ -1,0 +1,18 @@
+PAmeasures source lineage and licensing
+
+PAmeasures 2.0.0 is distributed under GNU GPL version 3.
+The complete GPL-3 text is in licenses/PAmeasures-GPL-3.txt.
+
+Original PAmeasures 0.1.0 (CRAN, 2018)
+Authors: Xiaoyan Wang and Gang Li
+License: GPL-3
+Source: https://cran.r-project.org/src/contrib/Archive/PAmeasures/PAmeasures_0.1.0.tar.gz
+The PA-measure implementations and moore data retain this ancestry.
+
+TimeMetric paper branch
+Source: https://github.com/toz015/TimeMetric
+Starting commit: f9fd19f73d7abefc8cb1c54c415ce99c1fd96ba0
+Authors: Tong Zhu, Zian Zhuang, Wen Su, Xiaowu Dai and Gang Li
+The TimeMetric source declared MIT + file LICENSE. The original full MIT
+notice is preserved in licenses/TimeMetric-MIT.txt and LICENSE.md. That
+notice does not replace GPL-3 obligations for inherited PAmeasures material.

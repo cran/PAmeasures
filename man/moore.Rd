@@ -3,18 +3,24 @@
 \docType{data}
 \name{moore}
 \alias{moore}
-\title{Moore's Law data}
-\format{A data frame with 48 rows and 3 variables:
+\title{Moore's Law Data}
+\format{
+A data frame with 48 rows and 3 variables:
 \describe{
-  \item{year}{year, from 1973 to 2011}
-  \item{time}{time starting from 1973}
-  \item{count}{number of transistors}
-}}
+  \item{year}{Year of introduction, from 1971 to 2012.}
+  \item{time}{Years elapsed since 1970.}
+  \item{count}{Number of transistors.}
+}
+}
+\source{
+Compiled from published microprocessor transistor counts.
+}
 \usage{
 moore
 }
 \description{
-A dataset containing the number of transistors and the corresponding #' years. The Moore's Law #'states that the number of transistors in a dense integrated circuit doubles approximately every two #'years.
-moore.
+Transistor counts for commercial microprocessors together with their year of
+introduction. Moore's Law observes that the number of transistors in a dense
+integrated circuit roughly doubles every two years.
 }
 \keyword{datasets}

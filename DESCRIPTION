@@ -1,28 +1,57 @@
 Package: PAmeasures
 Type: Package
-Title: Prediction and Accuracy Measures for Nonlinear Models and for
-        Right-Censored Time-to-Event Data
-Version: 0.1.0
-Date: 2018-01-18
-Author: Xiaoyan Wang, Gang Li
-Maintainer: Xiaoyan Wang<xywang@ucla.edu>
-Description: We propose a pair of summary measures for the predictive power of a prediction
-    function based on a regression model. The regression model can be linear
-    or nonlinear, parametric, semi-parametric, or nonparametric, and correctly
-    specified or mis-specified. The first measure, R-squared, is an extension of
-    the classical R-squared statistic for a linear model, quantifying the prediction
-    function's ability to capture the variability of the response. The second
-    measure, L-squared, quantifies the prediction function's bias for predicting the
-    mean regression function. When used together, they give a complete summary of
-    the predictive power of a prediction function. Please refer to Gang Li and Xiaoyan Wang (2016) <arXiv:1611.03063> for more details.
-Depends: R (>= 3.1)
-Imports: survival, stats
+Title: Performance Assessment for Continuous and Survival Outcomes
+Version: 2.0.0
+Date: 2026-10-27
+Authors@R: c(
+    person("Tong", "Zhu", role = "aut"),
+    person("Zian", "Zhuang", email = "zianzhuang@ucla.edu", role = c("aut", "cre")),
+    person("Wen", "Su", role = "aut"),
+    person("Xiaowu", "Dai", role = "aut"),
+    person("Xiaoyan", "Wang", role = "aut"),
+    person("Gang", "Li", role = "aut"))
+Description: Evaluates prediction accuracy for continuous outcomes and the
+    predictive performance of survival models in a unified framework.
+    Implements the R-squared, L-squared, pseudo R-squared and related explained
+    variation measures of Li and Wang (2019)
+    <doi:10.1080/01621459.2018.1515079>, the concordance indices of Harrell
+    et al. (1982) <doi:10.1001/jama.1982.03320430047030> and Uno et al.
+    (2011) <doi:10.1002/sim.4154>, the time-dependent area under the receiver
+    operating characteristic curve (AUC) of Heagerty, Lumley and Pepe (2000)
+    <doi:10.1111/j.0006-341X.2000.00337.x>, and the Brier score of Graf et
+    al. (1999)
+    <doi:10.1002/(SICI)1097-0258(19990915/30)18:17/18%3C2529::AID-SIM274%3E3.0.CO;2-5>.
+    Supports right-censored data; competing risks, following Wolbers et al.
+    (2014) <doi:10.1093/biostatistics/kxt059>, Wu and Li (2018)
+    <doi:10.1002/sim.7806> and Zhuang et al. (2025)
+    <doi:10.48550/arXiv.2507.15040>; and two-phase sampling designs such as
+    case-cohort and nested case-control studies, following Lee,
+    Zeleniuch-Jacquotte and Liu (2021) <doi:10.1080/02664763.2020.1861225>.
+    Revives and expands the original 'PAmeasures' package with a unified
+    interface for survival prediction assessment.
+Depends: R (>= 4.1.0)
+Imports: Hmisc, survival, stats, utils, tdROC, survivalROC, yardstick,
+        ggplot2, patchwork, dplyr, magrittr, purrr, tibble, tidyr, pec,
+        pmcalibration (>= 0.2.0), prodlim
+URL: https://github.com/Larryzza/PAmeasures
+BugReports: https://github.com/Larryzza/PAmeasures/issues
 License: GPL-3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
-RoxygenNote: 6.0.1
-Suggests: testthat
+Suggests: spelling, testthat (>= 3.0.0), withr, pkgload, covr,
+        randomForestSRC, cmprsk
+Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2018-01-20 20:05:16 UTC; wywang-adm
+Config/roxygen2/version: 8.1.0
+RoxygenNote: 7.3.3
+Packaged: 2026-10-28 16:49:55 UTC; root
+Author: Tong Zhu [aut],
+  Zian Zhuang [aut, cre],
+  Wen Su [aut],
+  Xiaowu Dai [aut],
+  Xiaoyan Wang [aut],
+  Gang Li [aut]
+Maintainer: Zian Zhuang <zianzhuang@ucla.edu>
 Repository: CRAN
-Date/Publication: 2018-01-22 10:06:41 UTC
+Date/Publication: 2026-10-28 19:20:17 UTC

@@ -1,0 +1,17 @@
+citHeader("To cite PAmeasures in publications, please use:")
+
+bibentry(
+  bibtype = "Manual",
+  title   = paste("{PAmeasures}:", meta$Title),
+  author  = c(
+    person("Tong",   "Zhu"),
+    person("Zian",   "Zhuang"),
+    person("Wen",    "Su"),
+    person("Xiaowu", "Dai"),
+    person("Xiaoyan", "Wang"),
+    person("Gang",   "Li")
+  ),
+  year    = "2026",
+  note    = paste("R package version", meta$Version),
+  url     = "https://github.com/Larryzza/PAmeasures"
+)

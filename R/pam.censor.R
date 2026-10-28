@@ -1,14 +1,12 @@
 #' @title Prediction Accuracy Measures for Regression Models of Right-Censored Data
 #'
 #' @description This function calculates a pair of measures, R-Squared and L-Squared, for any regression models of right-censored data. R-squared is an extension of the classical R2 statistic for a linear model, quantifying the amount of variability in the response that is explained by a corrected prediction based on the original prediction function. L-squared is the proportion of the prediction error of the original prediction function that is explained by the corrected prediction function, quantifying the distance between the corrected and uncorrected predictions. When used together, they give a complete summary of the predictive power of a prediction function.
-#' @export
 #' @param y A numeric vector containing the response values.
 #' @param y.predict A numeric vector containing the predicted response values from a fitted model.
 #' @param delta A numeric vector indicating the status of the event, normally 0=alive, 1=dead.
 #' @return  A list containing two components: R-squared and L-squared
 #' @examples
 #' library(survival)
-#' library(PAmeasures)
 #'
 #'# Use Mayo Clinic Primary Biliary Cirrhosis Data
 #'data(pbc)
@@ -24,10 +22,8 @@
 #'
 #'# R.squared and L.squared of log-linear model
 #'pam.censor(pbc$time, predict.time, delta.pbc)
-
-
-
-
+#' @keywords internal
+#' @noRd
 
 pam.censor<-function(y,y.predict,delta){
 
@@ -39,11 +35,7 @@ pam.censor<-function(y,y.predict,delta){
 
   #KM estimate for censoring distribution
   fit.km.censoring <- survfit(Surv(y.sorted, 1-delta.sorted) ~ 1  )
-  #sum.km.censoring<-summary(fit.km.censoring,  censored=TRUE)
-  sum.km.censoring<-summary(fit.km.censoring,times=y.sorted,extend=TRUE)
-  km.censoring<-sum.km.censoring$surv
-
-  km.censoring.minus<-c(1,km.censoring[-length(km.censoring)])
+  km.censoring.minus <- pa_censoring_left_limit(fit.km.censoring, y.sorted)
   ratio.km<- delta.sorted/km.censoring.minus
 
   ratio.km[is.nan(ratio.km)]<-0
@@ -71,4 +63,15 @@ pam.censor<-function(y,y.predict,delta){
   L2 <-format(round(num.L2/denom.L2,digits = 4),nsmall=4)
 
   return(list(R.squared=R2,L.squared=L2))
+}
+
+#' Left limit G(t-) of a censoring Kaplan-Meier fit
+#'
+#' Rows tied at a time share one left limit, so the result does not depend on
+#' the order of tied rows.
+#' @keywords internal
+#' @noRd
+pa_censoring_left_limit <- function(fit, times) {
+  idx <- findInterval(times, fit$time, left.open = TRUE)
+  c(1, fit$surv)[idx + 1L]
 }
